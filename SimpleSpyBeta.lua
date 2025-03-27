@@ -2090,7 +2090,7 @@ function()
             info = {
                 info = getinfo(func),
                 constants = lclosure and deepclone(getconstants(func)) or "N/A --Lua Closure expected got C Closure",
-                upvalues = deepclone(getupvalues(func)),
+                upvalues = lclosure and deepclone(getupvalues(func)) or "N/A --Lua Closure expected got C Closure",
                 script = {
                     SourceScript = SourceScript or 'nil',
                     CallingScript = CallingScript or 'nil'
